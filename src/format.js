@@ -175,15 +175,15 @@ angular.module('angularPayments')
   // cvc
 
   _formatCVC = function(e){
-    $target = angular.element(e.currentTarget);
-    digit = String.fromCharCode(e.which);
+    var $target = angular.element(e.currentTarget);
+    var digit = String.fromCharCode(e.which);
     
     if (!/^\d+$/.test(digit) && !e.meta && e.keyCode >= 46) {
       e.preventDefault();
       return;
     }
 
-    val = $target.val() + digit;
+    var val = $target.val() + digit;
     
     if(val.length <= 4){
       return;

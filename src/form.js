@@ -26,7 +26,7 @@ angular.module('angularPayments')
 
     var ret = {};
 
-    for(i in possibleKeys){
+    for(var i in possibleKeys){
         if(data.hasOwnProperty(possibleKeys[i])){
             ret[camelToSnake(possibleKeys[i])] = angular.copy(data[possibleKeys[i]]);
         }
@@ -49,11 +49,11 @@ angular.module('angularPayments')
 
       form.bind('submit', function() {
 
-        expMonthUsed = scope.expMonth ? true : false;
-        expYearUsed = scope.expYear ? true : false;
+        var expMonthUsed = scope.expMonth ? true : false;
+        var expYearUsed = scope.expYear ? true : false;
 
         if(!(expMonthUsed && expYearUsed)){
-          exp = Common.parseExpiry(scope.expiry)
+          var exp = Common.parseExpiry(scope.expiry)
           scope.expMonth = exp.month
           scope.expYear = exp.year
         }
