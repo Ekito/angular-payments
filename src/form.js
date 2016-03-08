@@ -10,7 +10,7 @@ angular.module('angularPayments')
 
 
   // filter valid stripe-values from scope and convert them from camelCase to snake_case
-  _getDataToSend = function(data){
+  var _getDataToSend = function(data){
            
     var possibleKeys = ['number', 'expMonth', 'expYear', 
                     'cvc', 'name','addressLine1', 
